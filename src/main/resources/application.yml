@@ -19,6 +19,10 @@ spring:
         # IN?? ???? ??
         default_batch_fetch_size: 100
   datasource:
+    hikari:
+      data-source-properties:
+        wrapperPlugins: failover,efm2
+      exception-override-class-name: software.amazon.jdbc.util.HikariCPSQLException
     basic:
       pool-name: default-hikari-pool
       jdbc-url: jdbc:aws-wrapper:mysql://${MYSQL_HOST:localhost:3306/basic}?serverTimezone=UTC&characterEncoding=UTF-8&rewriteBatchedStatements=true
