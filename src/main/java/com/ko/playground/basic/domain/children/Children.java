@@ -16,6 +16,12 @@ public class Children extends BaseEntity {
     @Column(name = "sex", nullable = false)
     private Sex sex;
 
+    @Column(name = "year_of_birth", nullable = false)
+    private Long yearOfBirth;
+
+    @Column(name = "delivery_zone_id", nullable = false)
+    private Long deliveryZoneId;
+
     @Column(name = "parent_id")
     private Long parentId;
 
@@ -24,4 +30,13 @@ public class Children extends BaseEntity {
 
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
+
+    public boolean checkAdult() {
+        return yearOfBirth <= LocalDateTime.now().getYear() - 18;
+    }
+
+    public Long changeDeliveryZone(Long deliveryZoneId) {
+        this.deliveryZoneId = deliveryZoneId;
+        return this.getId();
+    }
 }

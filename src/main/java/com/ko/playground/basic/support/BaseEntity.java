@@ -3,8 +3,10 @@ package com.ko.playground.basic.support;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.Getter;
 
 @Entity
+@Getter
 public class BaseEntity {
     @Id
     @GeneratedValue()
