@@ -25,7 +25,7 @@ spring:
       exception-override-class-name: software.amazon.jdbc.util.HikariCPSQLException
     basic:
       pool-name: default-hikari-pool
-      jdbc-url: jdbc:aws-wrapper:mysql://${MYSQL_HOST:localhost:3306/basic}?serverTimezone=UTC&characterEncoding=UTF-8&rewriteBatchedStatements=true
+      jdbc-url: jdbc:aws-wrapper:mysql://${MYSQL_HOST:localhost:3306/basic}?serverTimezone=UTC&characterEncoding=UTF-8&rewriteBatchedStatements=true}
       username: ${MYSQL_USER:root}
       password: ${MYSQL_PASSWORD:hhhh}
       type: org.springframework.jdbc.datasource.SimpleDriverDataSource
